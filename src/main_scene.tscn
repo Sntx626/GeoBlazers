@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dionaam27v0vs"]
+
+[ext_resource type="PackedScene" uid="uid://jq8ltljr8q36" path="res://src/floor.tscn" id="1_ap5x5"]
+[ext_resource type="PackedScene" uid="uid://dgdrfnfjognx2" path="res://src/character.tscn" id="2_ed0ef"]
+
+[node name="main" type="Node3D"]
+
+[node name="character" parent="." instance=ExtResource("2_ed0ef")]
+
+[node name="floor" parent="." instance=ExtResource("1_ap5x5")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 13.0496, 7.1041, 5.54489)
+shadow_enabled = true
