@@ -1,3 +1,6 @@
+# Nix specific ignores
+result/
+
 # Godot 4+ specific ignores
 .godot/
 
