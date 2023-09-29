@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://jq8ltljr8q36"]
 
-[ext_resource type="Texture2D" uid="uid://bp2cfkik4d38j" path="res://rsc/acaida-crude-map-osm.png" id="1_vj3m4"]
+[ext_resource type="Texture2D" uid="uid://dqbqb304ltsth" path="res://rsc/acadia-map/acadia-map.png" id="1_jid5x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j6tu2"]
 size = Vector3(22, 1, 50.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rb21q"]
-albedo_texture = ExtResource("1_vj3m4")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nc1ip"]
+albedo_texture = ExtResource("1_jid5x")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mocbc"]
 size = Vector2(22, 50.5)
@@ -18,5 +18,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_j6tu2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_rb21q")
+material_override = SubResource("StandardMaterial3D_nc1ip")
 mesh = SubResource("PlaneMesh_mocbc")

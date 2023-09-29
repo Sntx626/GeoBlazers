@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp2cfkik4d38j"
-path.s3tc="res://.godot/imported/acaida-crude-map-osm.png-6da61763b734aded62edfc12d3a5d3d7.s3tc.ctex"
+uid="uid://dqbqb304ltsth"
+path="res://.godot/imported/acadia-map.png-4695d2903d117beed621f9b67efec13b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://rsc/acaida-crude-map-osm.png"
-dest_files=["res://.godot/imported/acaida-crude-map-osm.png-6da61763b734aded62edfc12d3a5d3d7.s3tc.ctex"]
+source_file="res://rsc/acadia-map/acadia-map.png"
+dest_files=["res://.godot/imported/acadia-map.png-4695d2903d117beed621f9b67efec13b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
