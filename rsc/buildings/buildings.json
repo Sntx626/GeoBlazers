@@ -6,7 +6,8 @@
         "The Wong International Centre launched in 1997",
         "The WIC facilities (kitchen, living & dining area, meeting room) are available for use, to all members of the Acadia University Community.",
         "Wong International Centre was launched with the generous support of Gene D. Wong ('49), Acadia’s first graduate of Chinese descent, to provide support and information for Acadia’s many international students.",
-        "The Centre offers Wifi, a study room, and a kitchen where you can cook your favourite foods from home. You can also book the Centre to host an event."
+        "The Centre offers Wifi, a study room, and a kitchen where you can cook your favourite foods from home. You can also book the Centre to host an event.",
+        "The Hayward House is getting new steps installed!"
       ],
       "image_url": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fauadvice.files.wordpress.com%2F2015%2F11%2Fwong-center.jpg%3Fw%3D640&tbnid=XiJKRGGKbngalM&vet=12ahUKEwihwqmoic6BAxWLF2IAHXlbDkYQMygBegQIARBR..i&imgrefurl=https%3A%2F%2Fauadvice.wordpress.com%2F2015%2F11%2F14%2Finternational-wong-centre%2F&docid=9VbZPQZ9dH1faM&w=640&h=480&q=wong%20center%20acadia&ved=2ahUKEwihwqmoic6BAxWLF2IAHXlbDkYQMygBegQIARBR",
       "hours_of_operation": "8:30a.m - 10:00p.m",
@@ -28,9 +29,10 @@
     {
       "name": "Hayward House",
       "funfacts": [
-        "The academic institution was founded in 1838.",
-        "The Hayward House is getting new steps installed!",
-        "The Hayward House is right across the street from the BAC"
+        "This house houses Acadia's recruitment offices.",
+        "This building is a heritage site.",
+        "The Hayward House is right across the street from the BAC.",
+        "The Hayward House was formerly owned by the West family."
       ],
       "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGmcxFqIOCHhj4CcfhzElcQpAjjSoSVXzPGc94kWgS6Q&s",
       "hours_of_operation": "by appointment",
@@ -191,7 +193,7 @@
       "address": "44 Highland Ave, Wolfville, NS B4P 1Y7"
     },
     {
-      "name": "",
+      "name": "Central Heating Plant & Tank Farm",
       "funfacts": [
         "",
         "",
@@ -204,7 +206,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "DeWolfe Building",
       "funfacts": [
         "",
         "",
@@ -217,7 +219,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "SRMK Outdoor Activity Centre",
       "funfacts": [
         "",
         "",
@@ -230,7 +232,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Crowell Tower",
       "funfacts": [
         "",
         "",
@@ -243,7 +245,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Godfrey House",
       "funfacts": [
         "",
         "",
@@ -256,7 +258,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Bancroft House",
       "funfacts": [
         "",
         "",
@@ -269,7 +271,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Harvey Denton Hall",
       "funfacts": [
         "",
         "",
@@ -282,7 +284,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Dennis House",
       "funfacts": [
         "",
         "",
@@ -295,7 +297,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Chase Court",
       "funfacts": [
         "",
         "",
@@ -308,7 +310,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Festival Theatre",
       "funfacts": [
         "",
         "",
@@ -321,7 +323,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Alumni Hall",
       "funfacts": [
         "",
         "",
@@ -334,7 +336,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Acadia Athletics Complex",
       "funfacts": [
         "",
         "",
@@ -347,7 +349,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Elliott Hall",
       "funfacts": [
         "",
         "",
@@ -360,7 +362,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Huggins Science Hall",
       "funfacts": [
         "",
         "",
@@ -373,7 +375,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "University Hall",
       "funfacts": [
         "",
         "",
@@ -386,7 +388,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Horton Hall",
       "funfacts": [
         "",
         "",
@@ -399,7 +401,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Rhodes Hall",
       "funfacts": [
         "",
         "",
@@ -412,7 +414,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Patterson Hall",
       "funfacts": [
         "",
         "",
@@ -425,7 +427,20 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Carnegie Hall",
+      "funfacts": [
+        "Carnegie Hall is the computer science building!",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "image_url": "",
+      "hours_of_operation": "",
+      "address": ""
+    },
+    {
+      "name": "Emmerson Hall",
       "funfacts": [
         "",
         "",
@@ -438,7 +453,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "K.C. Irving Centre",
       "funfacts": [
         "",
         "",
@@ -451,7 +466,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Clark Commons",
       "funfacts": [
         "",
         "",
@@ -464,7 +479,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Roy Jodrey Hall",
       "funfacts": [
         "",
         "",
@@ -477,7 +492,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Christofer Hall",
       "funfacts": [
         "",
         "",
@@ -490,7 +505,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Eaton House",
       "funfacts": [
         "",
         "",
@@ -503,7 +518,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Irving Support Centre",
       "funfacts": [
         "",
         "",
@@ -516,7 +531,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "DeWolfe House",
       "funfacts": [
         "",
         "",
@@ -529,7 +544,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Cutten House",
       "funfacts": [
         "",
         "",
@@ -542,7 +557,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Robbie Roscoe Services Building (Physical Plant)",
       "funfacts": [
         "",
         "",
@@ -555,7 +570,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "Service Building Garage",
       "funfacts": [
         "",
         "",
@@ -568,7 +583,7 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "University Faculty Club",
       "funfacts": [
         "",
         "",
@@ -581,9 +596,9 @@
       "address": ""
     },
     {
-      "name": "",
+      "name": "War Memorial House",
       "funfacts": [
-        "",
+        "Another name for this building is Barracks",
         "",
         "",
         "",
@@ -594,20 +609,7 @@
       "address": ""
     },
     {
-      "name": "",
-      "funfacts": [
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      "image_url": "",
-      "hours_of_operation": "",
-      "address": ""
-    },
-    {
-      "name": "",
+      "name": "Biology Building",
       "funfacts": [
         "",
         "",
