@@ -17,7 +17,6 @@ Interactively discover the Acadia University
 
 * Setup of Discord server for team communication
 * Setup of GitHub repo
-
 * Collected first set of User-Stories
 * First Map Protoype
 * Initial set of 3d-modelled buildings
