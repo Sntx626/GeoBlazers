@@ -25,6 +25,14 @@ Interactively discover the Acadia University
 
 ---
 
+# Git Usage
+
+* GitHub Repo
+  * Issues / Milestone
+  * Project Board
+
+---
+
 # Future Work
 
 * Research into multiple build targets
@@ -35,6 +43,8 @@ Interactively discover the Acadia University
   * Data gathering
   * Data analysis
 * Writing the Paper
+
+![ui mockup](./rsc/ui-mockups-dark.png)
 
 ---
 
