@@ -379,67 +379,65 @@
     {
       "name": "Horton Hall",
       "funfacts": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "Exploring Minds, Expanding Horizons: Where Psychology Meets Gender Studies.",
+        "Unraveling the Complexities of the Human Psyche, One Study at a Time.",
+        "Where Empathy and Understanding Converge: The Hub for Psychology and Gender Studies.",
+        "Diversity of Thought, Unity of Purpose: The Heart of Gender and Psychology Exploration.",
+        "A Place of Empowerment, Transformation, and Equality: The Home of Gender Studies and Psychology."
       ],
-      "image_url": "",
-      "hours_of_operation": "",
-      "address": ""
+      "image_url": "https://www.theyerxas.ca/places/acadiac.gif",
+      "hours_of_operation": "8a.m - 4p.m",
+      "address": "18 University Ave Room 214, Wolfville, NS B4P 2P8"
     },
     {
       "name": "Rhodes Hall",
       "funfacts": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "Where Students Thrive and Dreams Take Flight: The Co-op Help Center and Accessibility Services Building – Your Gateway to Success.",
+        "Discovering Potential, Embracing Diversity: The Co-op Help Center and Access Services Hub, Your Partner in Achievement.",
+        "Navigating the Journey of Education and Professional Growth: Welcome to the Co-op Help Center and Accessibility Services Center.",
+        "A Place Where All Can Shine: The Co-op Help Center and Accessibility Services Building, Paving the Way to Your Bright Future."
       ],
-      "image_url": "",
-      "hours_of_operation": "",
-      "address": ""
+      "image_url": "https://c8.alamy.com/comp/E7X8TJ/a-view-of-rhodes-hall-at-acadia-university-E7X8TJ.jpg",
+      "hours_of_operation": "8a.m - 4p.m",
+      "address": "21 University Ave Wolfville, NS B4P 2R6"
     },
     {
       "name": "Patterson Hall",
       "funfacts": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "Where dreams take shape and ambitions find their compass, our university building is the hub for business students, Launchbox innovators, and The Path to success.",
+        "In this modern marvel of education, our business students learn to navigate the complexities of commerce, while Launchbox nurtures the next generation of entrepreneurs and The Path guides aspiring business leaders towards greatness.",
+        "This isn't just a building; it's the breeding ground for tomorrow's business magnates. Within these walls, business students thrive, Launchbox cultivates innovation, and The Path to success is paved with determination.",
+        "A fusion of academia and entrepreneurship, our university building symbolizes the synergy between business students, Launchbox visionaries, and The Path trailblazers. The journey begins here.",
+        "Step into a realm where business acumen meets entrepreneurial zeal. Our university building is a melting pot of ideas, as business students, Launchbox trailblazers, and The Path pioneers converge."
       ],
-      "image_url": "",
-      "hours_of_operation": "",
-      "address": ""
+      "image_url": "data:image/jpeg;base64,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",
+      "hours_of_operation": "8a.m - 10p.m",
+      "address": "24 University Ave, Wolfville, NS B4P 2R6"
     },
     {
       "name": "Carnegie Hall",
       "funfacts": [
-        "Carnegie Hall is the computer science building!",
-        "",
-        "",
-        "",
-        ""
+        "Where Innovation Meets Infrastructure: Unleashing the Future of Computing.",
+        "The Nexus of Code and Creativity: Our Home for Computer Science and Engineering Excellence.",
+        "Where Dreams Become Lines of Code: The Heart of Computer Science & Engineering.",
+        "Our Laboratory of Innovation: Where the Future is Written in Code.",
+        "Infinite Horizons, One Algorithm at a Time."
       ],
-      "image_url": "",
-      "hours_of_operation": "",
-      "address": ""
+      "image_url": "data:image/jpeg;base64,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",
+      "hours_of_operation": "8a.m - 10p.m",
+      "address": "27 University Ave, Wolfville, NS B4P 2R6"
     },
     {
       "name": "Emmerson Hall",
       "funfacts": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "Situated to the left of Carnegie Hall, Emmerson Hall is a two-storey, stone building whose ornate Italianate-style architecture is unique to the Acadia Campus.",
+        "Though one of the smallest academic buildings of the university, Emmerson Hall is a landmark of the campus and its central location overlooks a parkland setting that is dotted with several mature trees and paved walk-ways connecting to other campus buildings.",
+        "Emmerson Hall is valued for its architectural design and its association with Rev. Robert H. Emmerson, his son, the Hon. Henry R. Emmerson, and architect Andrew Cobb.",
+        "The only structure on the Acadia campus in the Italianate style, the hall is architecturally unique among Acadia’s academic buildings."
       ],
-      "image_url": "",
-      "hours_of_operation": "",
-      "address": ""
+      "image_url": "https://www.historicplaces.ca/hpimages/Thumbnails/11039_Medium.jpg",
+      "hours_of_operation": "8a.m - 4p.m",
+      "address": "31 University Ave, Wolfville, NS B4P 2R6"
     },
     {
       "name": "K.C. Irving Centre",
@@ -457,15 +455,15 @@
     {
       "name": "Clark Commons",
       "funfacts": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "Where knowledge meets rhythm, our university's study space and dance floor fusion invites you to dance your way to academic success.",
+        "Study, dance, repeat! Discover the harmony of learning and leisure in our residence quad's versatile building.",
+        "At the heart of the residence quad, a building that beats to its own drum – study, socialize, and sway to the music of academia and art.",
+        "Get ready to move to the groove of knowledge and dance in our unique university building where study sessions and dance sessions share the spotlight.",
+        "In this building, we don't just hit the books, we hit the dance floor too. It's your one-stop destination for academic focus and rhythmic release."
       ],
-      "image_url": "",
-      "hours_of_operation": "",
-      "address": ""
+      "image_url": "https://live.staticflickr.com/1526/25534293753_43eaaecf46_b.jpg",
+      "hours_of_operation": "6a.m - 10p.m",
+      "address": "37 University Ave, Wolfville, NS B4P 2R6"
     },
     {
       "name": "Roy Jodrey Hall",
@@ -508,28 +506,26 @@
     {
       "name": "Irving Support Centre",
       "funfacts": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "Building bridges to success – step into our support center and connect with your potential.",
+        "Enter these doors, and you'll find more than a building; you'll find a community of support",
+        "Our support center is where students' questions find answers and dreams find direction.",
+        "The heart of academic support beats within these walls, ready to assist and empower."
       ],
       "image_url": "",
-      "hours_of_operation": "",
-      "address": ""
+      "hours_of_operation": "8a.m - 4p.m",
+      "address": "50 University Ave"
     },
     {
       "name": "DeWolfe House",
       "funfacts": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "The DeWolfe House is located at the intersection of Main Street and Cherry Lane in Wolfville, NS. DeWolfe House is a late eighteenth-century, two-and-one-half storey wooden New England Colonial home and an architecturally unique landmark of the Wolfville community, as it is virtually unaltered from its original, Georgian form.",
+        "The DeWolfe House is valued for its age, historical association with its occupants, and for its New England Colonial and Georgian style architecture.",
+        "Built around 1775 by Joseph Jackson and James Rimington as a small two-storey New England Colonial residence, it is the oldest home in Wolfville.",
+        "A successful business person, Elisha DeWolfe was well-known for his hospitality and went on to become one of Wolfville's leading citizens."
       ],
-      "image_url": "",
-      "hours_of_operation": "",
-      "address": ""
+      "image_url": "https://www.historicplaces.ca/hpimages/Thumbnails/19724_Medium.jpg",
+      "hours_of_operation": "24/7",
+      "address": "654 Main Street, Wolfville, Nova Scotia, B4P, Canada"
     },
     {
       "name": "Cutten House",
@@ -546,41 +542,37 @@
     {
       "name": "Robbie Roscoe Services Building (Physical Plant)",
       "funfacts": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "The heartbeat of campus sustainability, this unassuming structure houses the intricate machinery that powers our eco-friendly campus.",
+        "Amidst the leafy quads and academic edifices, the physical plant stands as the silent guardian, ensuring the seamless functioning of our university.",
+        "A hidden sanctuary of gears and pipes, this unassuming building fuels the energy that drives innovation across the university.",
+        "Behind the scenes, this unpretentious building keeps the lights on, the heat flowing, and the wheels of education turning",
+        "A modern marvel of efficiency, this unheralded building embodies the synergy of technology and sustainability, fueling the engine of our university."
       ],
       "image_url": "",
-      "hours_of_operation": "",
-      "address": ""
+      "hours_of_operation": "24/7",
+      "address": "61 University Ave"
     },
     {
       "name": "Service Building Garage",
       "funfacts": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "Where innovation meets mobility – our university's garage hub.",
+        "Empowering the wheels of knowledge at our service building garage.",
+        "Unlocking potential, one parking spot at a time."
       ],
       "image_url": "",
-      "hours_of_operation": "",
-      "address": ""
+      "hours_of_operation": "24/7",
+      "address": "67 University Ave"
     },
     {
       "name": "University Faculty Club",
       "funfacts": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "The Faculty Club: Where knowledge meets camaraderie in a blend as rich as the history of our institution.",
+        "A sanctuary for scholars, a haven for educators, the Faculty Club stands as a testament to the bonds that shape our academic community",
+        "In this timeless haven of academia, we toast to wisdom, collaboration, and the pursuit of excellence."
       ],
       "image_url": "",
-      "hours_of_operation": "",
-      "address": ""
+      "hours_of_operation": "8a.m - 4p.m",
+      "address": "17 Westwood Ave"
     },
     {
       "name": "War Memorial House",
@@ -598,15 +590,15 @@
     {
       "name": "Biology Building",
       "funfacts": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "Where the wonders of life take shape, our biology building is a hub of discovery and innovation.",
+        "Explore the intricate tapestry of nature within the walls of our biology building, where science comes to life.",
+        "This building is the epicenter of biodiversity research, where students and researchers uncover the mysteries of life.",
+        "In our biology building, we decode the language of DNA and decipher the secrets of the natural world.",
+        "The heart of biological exploration beats within these walls, nurturing the minds of future biologists."
       ],
-      "image_url": "",
-      "hours_of_operation": "",
-      "address": ""
+      "image_url": "https://nycum.com/wp-content/uploads/acadia-ext-620x340.jpg",
+      "hours_of_operation": "8a.m - 10p.m",
+      "address": "33 Westwood Ave"
     }
   ]
 }
