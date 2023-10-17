@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dnklkxibjwi2r"]
 
-[ext_resource type="PackedScene" uid="uid://cgmi44egfxijg" path="res://rsc/Carnegie_Hall_WIP.dae" id="1_guk1a"]
+[ext_resource type="PackedScene" uid="uid://cgmi44egfxijg" path="res://rsc/buildings/carnegie-hall/Carnegie_Hall_WIP.dae" id="1_guk1a"]
 
 [node name="Carnegie_Hall_WIP" instance=ExtResource("1_guk1a")]
 

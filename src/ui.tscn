@@ -14,8 +14,8 @@ var buildings_json = {
 }
 
 class Building:
-	var name:String
-	var desc:String
+	var name: String
+	var desc: String
 	
 	func _init(pname:String, pdesc:String):
 		name = pname
@@ -29,6 +29,7 @@ func _ready():
 	# build building list from json
 	for building in buildings_json.keys():
 		buildings.append(Building.new(building, buildings_json[building]))
+	#buildings.sort_custom(func(x, y): x.name < y.name)
 	
 	# add buildings to poi-list in the menu
 	for building in buildings:
@@ -39,6 +40,7 @@ func _ready():
 
 func update_building_selection(index: int):
 	selected_building = index
+	$\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".select(index)
 	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".clear()
 	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".add_text(buildings[index].desc)
 
