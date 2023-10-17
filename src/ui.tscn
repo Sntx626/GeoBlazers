@@ -1,34 +1,71 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfiwsch5it64j"]
+[gd_scene load_steps=6 format=3 uid="uid://bfiwsch5it64j"]
 
 [ext_resource type="Texture2D" uid="uid://bja07ong1d1cx" path="res://rsc/icons/burger-menu-button/burger.png" id="1_xyv6u"]
+[ext_resource type="StyleBox" uid="uid://bypsu7fk5ni3a" path="res://src/style_box_border.tres" id="2_8kd81"]
 [ext_resource type="Texture2D" uid="uid://djadio40kkla0" path="res://rsc/icons/search-magnif/search-magnif.png" id="2_r02qv"]
 [ext_resource type="Theme" uid="uid://day5axyn1f4yd" path="res://src/main-theme.tres" id="3_xwq30"]
 
 [sub_resource type="GDScript" id="GDScript_4shl6"]
 script/source = "extends MarginContainer
 
-var buildings_json = {
-	\"Dennis House\": \"Lorem\",
-	\"KCIC\": \"Learn'n stuff\",
-	\"BAC\": \"This is the Lib\"
-}
-
 class Building:
 	var name: String
 	var desc: String
+	var image_url: String
+	var hours_of_operation: String
+	var address: String
 	
-	func _init(pname:String, pdesc:String):
+	func _init(pname:String, pdesc:Array, pimage: String, phours: String, paddress: String):
 		name = pname
-		desc = pdesc
+		desc = funfacts_to_desc(pdesc)
+		image_url = pimage
+		hours_of_operation = phours
+		address = paddress
+	
+	func funfacts_to_desc(facts: Array) -> String:
+		var result = \"\"
+		for item in facts:
+			result += item + \"\\n\"
+		return result
+
+func _process(delta):
+	if Input.is_action_just_pressed(\"menu_button_pressed\"):
+		_on_menubutton_pressed()
 
 var buildings = []
 var selected_building = 0
 
+func load_buildings() -> Array:
+	var buildings_str = \"\"
+	var buildings_file = FileAccess.open(\"res://rsc/buildings/buildings.json\", FileAccess.READ)
+	while buildings_file.get_position() < buildings_file.get_length():
+		buildings_str += buildings_file.get_line()
+	
+	var json = JSON.new()
+	var error = json.parse(buildings_str)
+	
+	var json_error = json.get_error_message()
+	var json_line = json.get_error_line()
+	print(\"\")
+	if error == OK:
+		var output = []
+		for building_dict in json.data[\"Results\"]:
+			output.append(Building.new(
+				building_dict.name,
+				building_dict.funfacts,
+				building_dict.image_url,
+				building_dict.hours_of_operation,
+				building_dict.address
+			))
+		return output
+	else:
+		print(\"JSON Parse Error: \", json.get_error_message(), \" in \", buildings_str, \" at line \", json.get_error_line())
+		return []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# build building list from json
-	for building in buildings_json.keys():
-		buildings.append(Building.new(building, buildings_json[building]))
+	buildings = load_buildings()
+	
 	#buildings.sort_custom(func(x, y): x.name < y.name)
 	
 	# add buildings to poi-list in the menu
@@ -100,12 +137,20 @@ theme = ExtResource("3_xwq30")
 [node name="menu-button" type="Button" parent="main-ui/top-bar"]
 layout_mode = 2
 theme = ExtResource("3_xwq30")
+theme_override_styles/normal = ExtResource("2_8kd81")
+theme_override_styles/hover = ExtResource("2_8kd81")
+theme_override_styles/pressed = ExtResource("2_8kd81")
+theme_override_styles/disabled = ExtResource("2_8kd81")
+theme_override_styles/focus = ExtResource("2_8kd81")
 icon = ExtResource("1_xyv6u")
 
 [node name="search-bar" type="LineEdit" parent="main-ui/top-bar"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_xwq30")
+theme_override_styles/normal = ExtResource("2_8kd81")
+theme_override_styles/focus = ExtResource("2_8kd81")
+theme_override_styles/read_only = ExtResource("2_8kd81")
 placeholder_text = " Search"
 right_icon = ExtResource("2_r02qv")
 
