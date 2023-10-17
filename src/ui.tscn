@@ -1,0 +1,178 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfiwsch5it64j"]
+
+[ext_resource type="Texture2D" uid="uid://bja07ong1d1cx" path="res://rsc/icons/burger-menu-button/burger.png" id="1_xyv6u"]
+[ext_resource type="Texture2D" uid="uid://djadio40kkla0" path="res://rsc/icons/search-magnif/search-magnif.png" id="2_r02qv"]
+[ext_resource type="Theme" uid="uid://day5axyn1f4yd" path="res://src/main-theme.tres" id="3_xwq30"]
+
+[sub_resource type="GDScript" id="GDScript_4shl6"]
+script/source = "extends MarginContainer
+
+var buildings_json = {
+	\"Dennis House\": \"Lorem\",
+	\"KCIC\": \"Learn'n stuff\",
+	\"BAC\": \"This is the Lib\"
+}
+
+class Building:
+	var name:String
+	var desc:String
+	
+	func _init(pname:String, pdesc:String):
+		name = pname
+		desc = pdesc
+
+var buildings = []
+var selected_building = 0
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	# build building list from json
+	for building in buildings_json.keys():
+		buildings.append(Building.new(building, buildings_json[building]))
+	
+	# add buildings to poi-list in the menu
+	for building in buildings:
+		$\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".add_item(building.name)
+	
+	# select first building
+	update_building_selection(0)
+
+func update_building_selection(index: int):
+	selected_building = index
+	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".clear()
+	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".add_text(buildings[index].desc)
+
+func find_building(name: String) -> int:
+	for i in range(len(buildings)):
+		if buildings[i].name.contains(name):
+			return i
+	return -1
+
+func goto_building():
+	print(selected_building)
+	
+	# reset ui state
+	$\"main-ui/top-bar/search-bar\".clear()
+	$\"main-ui/info-view\".visible = false
+
+func _on_menubutton_pressed():
+	var info_view = $\"main-ui/info-view\"
+	info_view.visible = !info_view.visible
+
+func _on_poilist_item_selected(index):
+	update_building_selection(index)
+
+func _on_searchbar_text_changed(new_text):
+	var building_id = find_building(new_text)
+	if building_id != -1:
+		update_building_selection(building_id)
+
+func _on_searchbar_text_submitted(new_text):
+	var building_id = find_building(new_text)
+	if building_id != -1:
+		selected_building = building_id
+		goto_building()
+
+func _on_gotopoibutton_pressed():
+	goto_building()
+"
+
+[node name="ui" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_xwq30")
+script = SubResource("GDScript_4shl6")
+
+[node name="main-ui" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme = ExtResource("3_xwq30")
+
+[node name="top-bar" type="HBoxContainer" parent="main-ui"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("3_xwq30")
+
+[node name="menu-button" type="Button" parent="main-ui/top-bar"]
+layout_mode = 2
+theme = ExtResource("3_xwq30")
+icon = ExtResource("1_xyv6u")
+
+[node name="search-bar" type="LineEdit" parent="main-ui/top-bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_xwq30")
+placeholder_text = " Search"
+right_icon = ExtResource("2_r02qv")
+
+[node name="info-view" type="HSplitContainer" parent="main-ui"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_xwq30")
+split_offset = 256
+
+[node name="poi-list-panel" type="Panel" parent="main-ui/info-view"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="main-ui/info-view/poi-list-panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="poi-list" type="ItemList" parent="main-ui/info-view/poi-list-panel/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_xwq30")
+
+[node name="poi-info-panel" type="Panel" parent="main-ui/info-view"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_xwq30")
+
+[node name="MarginContainer" type="MarginContainer" parent="main-ui/info-view/poi-info-panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_xwq30")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="main-ui/info-view/poi-info-panel/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_xwq30")
+
+[node name="poi-label" type="RichTextLabel" parent="main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_xwq30")
+text = "Lorem Ipsum
+\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"
+\"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...\"
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nulla enim, cursus eget nunc vel, auctor blandit lectus. Suspendisse feugiat elit ac mauris dictum finibus ut id neque. Integer vestibulum gravida metus et convallis. Duis molestie aliquam lectus id interdum. In eleifend risus ipsum, non faucibus mi ultricies ut. Suspendisse in orci vel augue congue fringilla. Cras vel tempor sapien, eget sagittis justo. Cras posuere erat non mattis imperdiet. Vestibulum lobortis vitae lacus quis porta. Nam ultrices metus sit amet ex ultricies, ac vestibulum magna commodo.
+
+Maecenas tempor dui id mi rhoncus molestie. Curabitur id fringilla dui. Fusce nunc nulla, maximus sed semper at, efficitur id lectus. Mauris quis vehicula ipsum, eget elementum massa. Ut at sodales orci. Aliquam ullamcorper arcu mauris, quis tincidunt libero congue in. Suspendisse ut enim vel sem malesuada dignissim.
+
+Quisque molestie ornare est ut facilisis. Quisque convallis dictum porttitor. Integer a bibendum mauris, non molestie libero. Donec a orci nunc. Proin arcu elit, tristique vel ligula et, commodo sodales enim. Donec lacinia urna vel velit molestie blandit. Fusce enim odio, tincidunt ut orci vitae, interdum pharetra eros.
+
+Nulla blandit mi vitae fringilla accumsan. In pulvinar tincidunt tellus, non dapibus sem mattis vel. Suspendisse sed pellentesque dui. Vivamus gravida eget velit dapibus pretium. Nam eleifend nibh et euismod tincidunt. Aenean aliquam sapien id augue viverra, eu vehicula massa fringilla. Vestibulum leo ligula, imperdiet ut ipsum eu, blandit semper massa. Phasellus convallis est eget elementum vulputate. Maecenas et erat ac odio feugiat eleifend at eu lectus. Aliquam quis nibh quis arcu convallis iaculis a vel erat. Donec erat augue, ultricies fermentum est in, finibus hendrerit neque. Suspendisse laoreet dolor sed dui molestie varius. Sed ullamcorper velit vitae orci porttitor, eget ultricies enim pharetra. Donec eu fermentum velit. Aliquam accumsan nisl dignissim, lacinia tellus vitae, semper neque. Etiam ante lectus, facilisis vitae dui et, fringilla venenatis mauris.
+
+Cras sollicitudin dolor eu nibh venenatis, et placerat lacus congue. Sed nibh eros, commodo eu varius in, euismod tempor lectus. Proin vulputate eu nibh vel sollicitudin. Nam massa massa, sagittis aliquet eleifend vitae, ultricies non velit. Mauris tempus porttitor magna, et viverra purus dictum vel. Proin ornare massa cursus tellus pharetra, nec blandit risus viverra. Quisque sed lacinia leo. Vestibulum at tortor non risus egestas tincidunt. "
+
+[node name="goto-poi-button" type="Button" parent="main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_xwq30")
+text = "Goto Building"
+
+[connection signal="pressed" from="main-ui/top-bar/menu-button" to="." method="_on_menubutton_pressed"]
+[connection signal="text_changed" from="main-ui/top-bar/search-bar" to="." method="_on_searchbar_text_changed"]
+[connection signal="text_submitted" from="main-ui/top-bar/search-bar" to="." method="_on_searchbar_text_submitted"]
+[connection signal="item_selected" from="main-ui/info-view/poi-list-panel/MarginContainer/poi-list" to="." method="_on_poilist_item_selected"]
+[connection signal="pressed" from="main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/goto-poi-button" to="." method="_on_gotopoibutton_pressed"]
