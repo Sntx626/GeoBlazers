@@ -35,6 +35,10 @@ func _process(delta):
 			_on_close_tutorial_button_pressed()
 		else:
 			_on_menubutton_pressed()
+			
+	#if Input.is_action_just_pressed(\"alphabet\"):
+		#_on_searchbar_text_changed(text)
+		
 
 var buildings = []
 var selected_building = 0
@@ -85,6 +89,7 @@ func update_building_selection(index: int):
 	$\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".select(index)
 	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".clear()
 	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".add_text(buildings[index].desc)
+	$\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".ensure_current_is_visible()
 
 func find_building(name: String) -> int:
 	for i in range(len(buildings)):
