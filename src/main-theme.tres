@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://day5axyn1f4yd"]
+
+[ext_resource type="StyleBox" uid="uid://bc36poranoh25" path="res://src/style_box.tres" id="1_rs7h7"]
+
+[resource]
+BoxContainer/constants/separation = 4
+Button/styles/disabled = ExtResource("1_rs7h7")
+Button/styles/focus = ExtResource("1_rs7h7")
+Button/styles/hover = ExtResource("1_rs7h7")
+Button/styles/normal = ExtResource("1_rs7h7")
+Button/styles/pressed = ExtResource("1_rs7h7")
+ItemList/colors/font_color = Color(0.392157, 0.321569, 0.25098, 1)
+ItemList/colors/font_hovered_color = Color(0.392157, 0.321569, 0.25098, 1)
+ItemList/colors/font_outline_color = Color(0.392157, 0.321569, 0.25098, 1)
+ItemList/colors/font_selected_color = Color(0.392157, 0.321569, 0.25098, 1)
+ItemList/styles/panel = ExtResource("1_rs7h7")
+LineEdit/colors/font_color = Color(0.392157, 0.321569, 0.25098, 1)
+LineEdit/colors/font_placeholder_color = Color(0.392157, 0.321569, 0.25098, 0.933333)
+LineEdit/styles/focus = ExtResource("1_rs7h7")
+LineEdit/styles/normal = ExtResource("1_rs7h7")
+LineEdit/styles/read_only = ExtResource("1_rs7h7")
+MarginContainer/constants/margin_bottom = 4
+MarginContainer/constants/margin_left = 4
+MarginContainer/constants/margin_right = 4
+MarginContainer/constants/margin_top = 4
+Panel/styles/panel = ExtResource("1_rs7h7")
+RichTextLabel/colors/default_color = Color(0.392157, 0.321569, 0.25098, 1)
+RichTextLabel/colors/font_outline_color = Color(0.392157, 0.321569, 0.25098, 1)
+SplitContainer/constants/separation = 4
+TextEdit/styles/focus = ExtResource("1_rs7h7")
+TextEdit/styles/normal = ExtResource("1_rs7h7")
+TextEdit/styles/read_only = ExtResource("1_rs7h7")
