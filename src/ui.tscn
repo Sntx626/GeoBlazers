@@ -224,6 +224,55 @@ size_flags_horizontal = 4
 theme = ExtResource("3_xwq30")
 text = "Go To Building"
 
+[node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 2
+theme = ExtResource("3_xwq30")
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_xwq30")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_xwq30")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_xwq30")
+text = "This is a Tutorial
+
+Please read!"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_xwq30")
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/Panel/MarginContainer2"]
+layout_mode = 2
+theme = ExtResource("3_xwq30")
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/MarginContainer2/CenterContainer"]
+layout_mode = 2
+theme = ExtResource("3_xwq30")
+text = "Close Info"
+
 [connection signal="pressed" from="main-ui/top-bar/menu-button" to="." method="_on_menubutton_pressed"]
 [connection signal="text_changed" from="main-ui/top-bar/search-bar" to="." method="_on_searchbar_text_changed"]
 [connection signal="text_submitted" from="main-ui/top-bar/search-bar" to="." method="_on_searchbar_text_submitted"]
