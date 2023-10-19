@@ -30,7 +30,10 @@ class Building:
 
 func _process(delta):
 	if Input.is_action_just_pressed(\"menu_button_pressed\"):
-		_on_menubutton_pressed()
+		if tutorial_open:
+			_on_close_tutorial_button_pressed()
+		else:
+			_on_menubutton_pressed()
 
 var buildings = []
 var selected_building = 0
@@ -95,6 +98,8 @@ func goto_building():
 	$\"main-ui/info-view\".visible = false
 
 func _on_menubutton_pressed():
+	if tutorial_open:
+		return
 	var info_view = $\"main-ui/info-view\"
 	info_view.visible = !info_view.visible
 
@@ -114,6 +119,11 @@ func _on_searchbar_text_submitted(new_text):
 
 func _on_gotopoibutton_pressed():
 	goto_building()
+
+var tutorial_open = true
+func _on_close_tutorial_button_pressed():
+	$\"tutorial\".visible = false
+	tutorial_open = false
 "
 
 [node name="ui" type="MarginContainer"]
@@ -218,20 +228,19 @@ size_flags_horizontal = 4
 theme = ExtResource("3_xwq30")
 text = "Goto Building"
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
+[node name="tutorial" type="MarginContainer" parent="."]
 layout_mode = 2
 theme = ExtResource("3_xwq30")
-theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 64
-theme_override_constants/margin_right = 64
-theme_override_constants/margin_bottom = 64
+theme_override_constants/margin_left = 196
+theme_override_constants/margin_top = 196
+theme_override_constants/margin_right = 196
+theme_override_constants/margin_bottom = 196
 
-[node name="Panel" type="Panel" parent="MarginContainer"]
+[node name="tutorial-bg" type="Panel" parent="tutorial"]
 layout_mode = 2
 theme = ExtResource("3_xwq30")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="tutorial/tutorial-bg"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -240,14 +249,18 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_xwq30")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="tutorial/tutorial-bg/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("3_xwq30")
 text = "This is a Tutorial
 
-Please read!"
+* Use the arrow keys for navigating the character.
+* Press ESC or the button in the top left corner to open the building menu
+* You can always type the name of the building in the top bar to focus it
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Panel"]
+Thank you for using our application!"
+
+[node name="MarginContainer2" type="MarginContainer" parent="tutorial/tutorial-bg"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -258,11 +271,11 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("3_xwq30")
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/Panel/MarginContainer2"]
+[node name="CenterContainer" type="CenterContainer" parent="tutorial/tutorial-bg/MarginContainer2"]
 layout_mode = 2
 theme = ExtResource("3_xwq30")
 
-[node name="Button" type="Button" parent="MarginContainer/Panel/MarginContainer2/CenterContainer"]
+[node name="CloseTutorialButton" type="Button" parent="tutorial/tutorial-bg/MarginContainer2/CenterContainer"]
 layout_mode = 2
 theme = ExtResource("3_xwq30")
 text = "Close Info"
@@ -272,3 +285,4 @@ text = "Close Info"
 [connection signal="text_submitted" from="main-ui/top-bar/search-bar" to="." method="_on_searchbar_text_submitted"]
 [connection signal="item_selected" from="main-ui/info-view/poi-list-panel/MarginContainer/poi-list" to="." method="_on_poilist_item_selected"]
 [connection signal="pressed" from="main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/goto-poi-button" to="." method="_on_gotopoibutton_pressed"]
+[connection signal="pressed" from="tutorial/tutorial-bg/MarginContainer2/CenterContainer/CloseTutorialButton" to="." method="_on_close_tutorial_button_pressed"]
