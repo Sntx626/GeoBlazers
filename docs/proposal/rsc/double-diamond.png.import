@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvsjltornrsrt"
-path="res://.godot/imported/ui-mockups-dark.png-09e41ed5bc62206445f8bbf72bc2d454.ctex"
+uid="uid://coxfiqm4q6rwj"
+path="res://.godot/imported/double-diamond.png-6d6908821fa87888a2c9a324f6d4ce6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/midterm-slide/markdown-prototype/rsc/ui-mockups-dark.png"
-dest_files=["res://.godot/imported/ui-mockups-dark.png-09e41ed5bc62206445f8bbf72bc2d454.ctex"]
+source_file="res://docs/proposal/rsc/double-diamond.png"
+dest_files=["res://.godot/imported/double-diamond.png-6d6908821fa87888a2c9a324f6d4ce6e.ctex"]
 
 [params]
 

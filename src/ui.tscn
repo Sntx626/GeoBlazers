@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfiwsch5it64j"]
+[gd_scene load_steps=7 format=3 uid="uid://bfiwsch5it64j"]
 
 [ext_resource type="Texture2D" uid="uid://bja07ong1d1cx" path="res://rsc/icons/burger-menu-button/burger.png" id="1_xyv6u"]
 [ext_resource type="StyleBox" uid="uid://bypsu7fk5ni3a" path="res://src/style_box_border.tres" id="2_8kd81"]
 [ext_resource type="Texture2D" uid="uid://djadio40kkla0" path="res://rsc/icons/search-magnif/search-magnif.png" id="2_r02qv"]
 [ext_resource type="Theme" uid="uid://day5axyn1f4yd" path="res://src/main-theme.tres" id="3_xwq30"]
+[ext_resource type="StyleBox" uid="uid://c2bnymr34eh7c" path="res://src/listItemSelected.tres" id="5_uq37n"]
 
 [sub_resource type="GDScript" id="GDScript_4shl6"]
 script/source = "extends MarginContainer
@@ -25,12 +26,13 @@ class Building:
 	func funfacts_to_desc(facts: Array) -> String:
 		var result = \"\"
 		for item in facts:
-			result += item + \"\\n\"
+			result += item + \"\\n\\n\"
 		return result
 
 func _process(delta):
 	if Input.is_action_just_pressed(\"menu_button_pressed\"):
 		_on_menubutton_pressed()
+		
 
 var buildings = []
 var selected_building = 0
@@ -46,17 +48,18 @@ func load_buildings() -> Array:
 	
 	var json_error = json.get_error_message()
 	var json_line = json.get_error_line()
-	print(\"\")
+	
 	if error == OK:
 		var output = []
 		for building_dict in json.data[\"Results\"]:
 			output.append(Building.new(
-				building_dict.name,
+				String(building_dict.name),
 				building_dict.funfacts,
 				building_dict.image_url,
 				building_dict.hours_of_operation,
 				building_dict.address
 			))
+		output.sort_custom(func(a, b): return a.name.nocasecmp_to(b.name) < 0)
 		return output
 	else:
 		print(\"JSON Parse Error: \", json.get_error_message(), \" in \", buildings_str, \" at line \", json.get_error_line())
@@ -171,10 +174,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_xwq30")
 
 [node name="poi-list" type="ItemList" parent="main-ui/info-view/poi-list-panel/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("3_xwq30")
+theme_override_styles/selected = ExtResource("5_uq37n")
+theme_override_styles/selected_focus = ExtResource("5_uq37n")
 
 [node name="poi-info-panel" type="Panel" parent="main-ui/info-view"]
 layout_mode = 2
@@ -216,7 +222,7 @@ Cras sollicitudin dolor eu nibh venenatis, et placerat lacus congue. Sed nibh er
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_xwq30")
-text = "Goto Building"
+text = "Go To Building"
 
 [connection signal="pressed" from="main-ui/top-bar/menu-button" to="." method="_on_menubutton_pressed"]
 [connection signal="text_changed" from="main-ui/top-bar/search-bar" to="." method="_on_searchbar_text_changed"]
