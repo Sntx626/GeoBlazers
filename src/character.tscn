@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dgdrfnfjognx2"]
 
-[ext_resource type="Texture2D" uid="uid://wkt45hb1miu5" path="res://rsc/icon.svg" id="1_gdj0y"]
+[ext_resource type="Texture2D" uid="uid://85r22wb4ti8x" path="res://rsc/icons/character/Acadia_University_Wordmark_2014-logo-only.svg" id="1_o8wv6"]
 
 [sub_resource type="GDScript" id="GDScript_8e8in"]
 script/source = "extends CharacterBody3D
@@ -9,24 +9,20 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting(\"physics/3d/default_gravity\")
+var gravity = ProjectSettings.get_setting(\"physics/3d/default_gravity\") * 1.4
 
 func _physics_process(delta):
-	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# Handle Jump.
-	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\")
+	
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		if is_on_floor():
+			velocity.y = JUMP_VELOCITY * 0.5
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -47,10 +43,10 @@ shape = SubResource("BoxShape3D_bgkvs")
 transform = Transform3D(-0.382683, 0, -0.92388, 0, 1, 0, 0.92388, 0, -0.382683, 0, 0, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="perspective"]
-transform = Transform3D(-3.49691e-08, -0.565685, 0.565685, 0, 0.565685, 0.565685, -0.8, 2.47269e-08, -2.47269e-08, 0, 0.5, -0.014)
-texture = ExtResource("1_gdj0y")
+transform = Transform3D(-3.49691e-09, -0.0565685, 0.0565685, 0, 0.0565685, 0.0565685, -0.08, 2.47269e-09, -2.47269e-09, 0, 0.5, -0.014)
+texture = ExtResource("1_o8wv6")
 
 [node name="Camera3D" type="Camera3D" parent="perspective/Sprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+transform = Transform3D(12.5, -2.38419e-07, -2.38419e-07, -2.38419e-07, 12.5, 1.43051e-06, 0, 4.76837e-07, 12.5, 0, 0, 150)
 projection = 1
 size = 10.0
