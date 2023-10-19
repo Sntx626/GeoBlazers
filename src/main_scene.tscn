@@ -10,6 +10,7 @@
 [node name="ui" parent="." instance=ExtResource("1_wbppl")]
 
 [node name="character" parent="." instance=ExtResource("2_ed0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4388, 0, -3.19637)
 
 [node name="floor" parent="." instance=ExtResource("1_ap5x5")]
 

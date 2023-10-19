@@ -4,7 +4,7 @@
 [ext_resource type="StyleBox" uid="uid://bypsu7fk5ni3a" path="res://src/style_box_border.tres" id="2_8kd81"]
 [ext_resource type="Texture2D" uid="uid://djadio40kkla0" path="res://rsc/icons/search-magnif/search-magnif.png" id="2_r02qv"]
 [ext_resource type="Theme" uid="uid://day5axyn1f4yd" path="res://src/main-theme.tres" id="3_xwq30"]
-[ext_resource type="StyleBox" uid="uid://c2bnymr34eh7c" path="res://src/listItemSelected.tres" id="5_uq37n"]
+[ext_resource type="StyleBox" path="res://src/listItemSelected.tres" id="5_uq37n"]
 
 [sub_resource type="GDScript" id="GDScript_4shl6"]
 script/source = "extends MarginContainer
@@ -35,6 +35,10 @@ func _process(delta):
 			_on_close_tutorial_button_pressed()
 		else:
 			_on_menubutton_pressed()
+			
+	#if Input.is_action_just_pressed(\"alphabet\"):
+		#_on_searchbar_text_changed(text)
+		
 
 var buildings = []
 var selected_building = 0
@@ -85,6 +89,7 @@ func update_building_selection(index: int):
 	$\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".select(index)
 	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".clear()
 	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".add_text(buildings[index].desc)
+	$\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".ensure_current_is_visible()
 
 func find_building(name: String) -> int:
 	for i in range(len(buildings)):
