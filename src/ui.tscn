@@ -4,10 +4,13 @@
 [ext_resource type="StyleBox" uid="uid://bypsu7fk5ni3a" path="res://src/style_box_border.tres" id="2_8kd81"]
 [ext_resource type="Texture2D" uid="uid://djadio40kkla0" path="res://rsc/icons/search-magnif/search-magnif.png" id="2_r02qv"]
 [ext_resource type="Theme" uid="uid://day5axyn1f4yd" path="res://src/main-theme.tres" id="3_xwq30"]
-[ext_resource type="StyleBox" path="res://src/listItemSelected.tres" id="5_uq37n"]
+[ext_resource type="StyleBox" uid="uid://c2bnymr34eh7c" path="res://src/listItemSelected.tres" id="5_uq37n"]
 
 [sub_resource type="GDScript" id="GDScript_4shl6"]
 script/source = "extends MarginContainer
+
+var delay = 0.1
+var timer = Timer.new()
 
 class Building:
 	var name: String
@@ -28,14 +31,34 @@ class Building:
 		for item in facts:
 			result += item + \"\\n\\n\"
 		return result
+		
+
 
 func _process(delta):
+	var isMenuVisible = false
 	if Input.is_action_just_pressed(\"menu_button_pressed\"):
 		if tutorial_open:
 			_on_close_tutorial_button_pressed()
 		else:
 			_on_menubutton_pressed()
 			
+	var info_view = $\"main-ui/info-view\"
+	if timer.is_stopped(): #If its been atleast 0.2 seconds
+		if info_view: #if the menu is visible
+			if Input.is_action_pressed(\"ui_up\"):
+				var selectedIndex = $\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".get_selected_items()[0]
+				if(selectedIndex > 0):
+					update_building_selection(selectedIndex-1)
+					timer.start()
+				
+			if Input.is_action_pressed(\"ui_down\"):
+				var selectedIndex = $\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".get_selected_items()[0]
+				var itemCount = $\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".item_count
+				if(selectedIndex < itemCount-1):
+					update_building_selection(selectedIndex+1)
+					timer.start()
+		
+		
 	#if Input.is_action_just_pressed(\"alphabet\"):
 		#_on_searchbar_text_changed(text)
 		
@@ -74,6 +97,9 @@ func load_buildings() -> Array:
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	buildings = load_buildings()
+	add_child(timer)
+	timer.wait_time = delay
+	timer.one_shot = true
 	
 	#buildings.sort_custom(func(x, y): x.name < y.name)
 	
@@ -88,8 +114,14 @@ func update_building_selection(index: int):
 	selected_building = index
 	$\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".select(index)
 	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".clear()
-	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".add_text(buildings[index].desc)
+	label_driver(index)
 	$\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".ensure_current_is_visible()
+
+
+func label_driver(index: int):
+	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".add_text(buildings[index].desc)
+	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".add_image(buildings[index].image_url)
+
 
 func find_building(name: String) -> int:
 	for i in range(len(buildings)):
