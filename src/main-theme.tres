@@ -3,6 +3,7 @@
 [ext_resource type="StyleBox" uid="uid://bc36poranoh25" path="res://src/style_box.tres" id="1_rs7h7"]
 
 [resource]
+default_font_size = 16
 BoxContainer/constants/separation = 4
 Button/colors/font_color = Color(0.4, 0.258824, 0.0156863, 1)
 Button/colors/font_hover_color = Color(0.376471, 0.32549, 0.0705882, 1)
