@@ -4,7 +4,7 @@
 [ext_resource type="StyleBox" uid="uid://bypsu7fk5ni3a" path="res://src/style_box_border.tres" id="2_8kd81"]
 [ext_resource type="Texture2D" uid="uid://djadio40kkla0" path="res://rsc/icons/search-magnif/search-magnif.png" id="2_r02qv"]
 [ext_resource type="Theme" uid="uid://day5axyn1f4yd" path="res://src/main-theme.tres" id="3_xwq30"]
-[ext_resource type="StyleBox" path="res://src/listItemSelected.tres" id="5_uq37n"]
+[ext_resource type="StyleBox" uid="uid://c2bnymr34eh7c" path="res://src/listItemSelected.tres" id="5_uq37n"]
 
 [sub_resource type="GDScript" id="GDScript_4shl6"]
 script/source = "extends MarginContainer

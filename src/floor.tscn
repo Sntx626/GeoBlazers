@@ -1,6 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://jq8ltljr8q36"]
+[gd_scene load_steps=30 format=3 uid="uid://jq8ltljr8q36"]
 
 [ext_resource type="Texture2D" uid="uid://dqbqb304ltsth" path="res://rsc/acadia-map/acadia-map.png" id="1_jid5x"]
+[ext_resource type="PackedScene" uid="uid://woiy7xcx5f72" path="res://rsc/buildings/Crowell Tower/Tower.dae" id="2_wtl07"]
+[ext_resource type="PackedScene" uid="uid://bw8fuipailpql" path="res://rsc/buildings/Acadia Students Union/ASU.dae" id="3_ek0ir"]
+[ext_resource type="PackedScene" uid="uid://bjnft1ixruas3" path="res://rsc/buildings/Chase Court/Chase Court.dae" id="4_2pa6q"]
+[ext_resource type="PackedScene" uid="uid://dpebgiccw41et" path="res://rsc/buildings/Chipman House/Chipman.dae" id="5_50066"]
+[ext_resource type="PackedScene" uid="uid://cgmi44egfxijg" path="res://rsc/buildings/carnegie-hall/Carnegie_Hall_WIP.dae" id="6_cu4is"]
+[ext_resource type="PackedScene" uid="uid://cefwxh757nfag" path="res://rsc/buildings/Beverage Arts Hall/BAC.dae" id="7_h6rig"]
+[ext_resource type="PackedScene" uid="uid://dr3dl0dq7m76a" path="res://rsc/buildings/Acadia Divinity College/Acadia Divinity College.dae" id="8_r4cac"]
+[ext_resource type="PackedScene" uid="uid://d2lihoiw1ifag" path="res://rsc/buildings/Denton Hall/Denton3.dae" id="9_hjiid"]
+[ext_resource type="PackedScene" uid="uid://mbdqqmptxare" path="res://rsc/buildings/DeWolf (Farmers Market)/Dewolf.dae" id="10_v4pif"]
+[ext_resource type="PackedScene" uid="uid://botxg3piwtgna" path="res://rsc/buildings/Dennis House/Dennis.dae" id="11_bra7q"]
+[ext_resource type="PackedScene" uid="uid://casr1rqk1i4rb" path="res://rsc/buildings/University Hall/University Hall.dae" id="12_pw02k"]
+[ext_resource type="PackedScene" uid="uid://dywa41wrmrdac" path="res://rsc/buildings/Wheelock Hall/Wheelock_hall.dae" id="13_6nsle"]
+[ext_resource type="PackedScene" uid="uid://bmhltt0h8hc4x" path="res://rsc/buildings/Eaton Hall/Eaton.dae" id="14_tjjof"]
+[ext_resource type="PackedScene" uid="uid://ccpti7h8k2ci0" path="res://rsc/buildings/Christopher House/Christopher.dae" id="15_u738r"]
+[ext_resource type="PackedScene" uid="uid://bya66kc7sfowx" path="res://rsc/buildings/Whitman House/Whitman_House.dae" id="16_wf73i"]
+[ext_resource type="PackedScene" uid="uid://dw4pgrt40xkng" path="res://rsc/buildings/Raymond House/Raymond House.dae" id="17_fkwrd"]
+[ext_resource type="PackedScene" uid="uid://crfbnma50264r" path="res://rsc/buildings/Emmerson Hall/Emmerson Hall.dae" id="18_f8xng"]
+[ext_resource type="PackedScene" uid="uid://nchtfh7vvkcf" path="res://rsc/buildings/Manning Memorial Chapel/Manning Memorial Chalpel.dae" id="19_f2n2t"]
+[ext_resource type="PackedScene" uid="uid://rum40exydm1q" path="res://rsc/buildings/Rhodes Hall/Rhodes Hall.dae" id="20_cl8n2"]
+[ext_resource type="PackedScene" uid="uid://id8alqwvccwc" path="res://rsc/buildings/Willett House/willet_house.dae" id="21_mtgoa"]
+[ext_resource type="PackedScene" uid="uid://ck7h0hmlsyuf4" path="res://rsc/buildings/Fountain Commons/Fountain Hall 2.dae" id="22_0o3rd"]
+[ext_resource type="PackedScene" uid="uid://qv0sd6esllix" path="res://rsc/buildings/Cutten House/Cutten House.dae" id="23_cc3rf"]
+[ext_resource type="PackedScene" uid="uid://2auox4e2h4pp" path="res://rsc/buildings/Bancroft House/Bancroft.dae" id="24_bxmes"]
+[ext_resource type="PackedScene" uid="uid://c4ympm6f6h8yu" path="res://rsc/buildings/Hayward House/Hayward_House.dae" id="25_4s8b4"]
+[ext_resource type="PackedScene" uid="uid://5oy6o1x0d8h3" path="res://rsc/buildings/Wong International Centre/Wong International Centre.dae" id="26_51fv0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j6tu2"]
 size = Vector3(22, 1, 50.5)
@@ -20,3 +45,78 @@ shape = SubResource("BoxShape3D_j6tu2")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_nc1ip")
 mesh = SubResource("PlaneMesh_mocbc")
+
+[node name="Tower" parent="." instance=ExtResource("2_wtl07")]
+transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, 1.38913, 1.29244, 17.3186)
+
+[node name="ASU" parent="." instance=ExtResource("3_ek0ir")]
+transform = Transform3D(0.57901, 0, -0.157313, 0, 0.6, 0, 0.157313, 0, 0.57901, 3.33037, 0.0096705, -1.82133)
+
+[node name="Chase Court" parent="." instance=ExtResource("4_2pa6q")]
+transform = Transform3D(0.388118, 0, -0.0967688, 0, 0.4, 0, 0.0967688, 0, 0.388118, -1.84783, -0.0100549, 8.28343)
+
+[node name="Chipman" parent="." instance=ExtResource("5_50066")]
+transform = Transform3D(-0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, -6.08916, 4.76837e-07, 2.60683)
+
+[node name="Carnegie_Hall_WIP" parent="." instance=ExtResource("6_cu4is")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -6.92128, 0.371334, -5.01684)
+
+[node name="BAC" parent="." instance=ExtResource("7_h6rig")]
+transform = Transform3D(0.785302, 0, -0.152647, 0, 0.8, 0, 0.152647, 0, 0.785302, 4.79206, 0.0104332, -14.432)
+
+[node name="Acadia Divinity College" parent="." instance=ExtResource("8_r4cac")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.66268, 0.316651, 3.53937)
+
+[node name="Denton3" parent="." instance=ExtResource("9_hjiid")]
+transform = Transform3D(0.590885, 0, -0.104189, 0, 0.6, 0, 0.104189, 0, 0.590885, 0.723177, -0.0146239, -5.68086)
+
+[node name="Dewolf" parent="." instance=ExtResource("10_v4pif")]
+transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, -5.76698, 0.0265244, 1.01383)
+
+[node name="Dennis" parent="." instance=ExtResource("11_bra7q")]
+transform = Transform3D(-1.74846e-09, 0, -0.04, 0, 0.04, 0, 0.04, 0, -1.74846e-09, 1.09578, 0.0377896, 4.24171)
+
+[node name="University Hall" parent="." instance=ExtResource("12_pw02k")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -5.04495, 0, -11.7535)
+
+[node name="Wheelock_hall" parent="." instance=ExtResource("13_6nsle")]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 4.17305, 0.331933, 8.34669)
+
+[node name="Eaton" parent="." instance=ExtResource("14_tjjof")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -5.83073, -0.0557286, 7.80962)
+
+[node name="Christopher" parent="." instance=ExtResource("15_u738r")]
+transform = Transform3D(-2.18557e-09, 0, -0.05, 0, 0.05, 0, 0.05, 0, -2.18557e-09, -7.2834, -0.0379426, 6.06983)
+
+[node name="Whitman_House" parent="." instance=ExtResource("16_wf73i")]
+transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 2.19518, 0.335091, -0.457116)
+
+[node name="Raymond House" parent="." instance=ExtResource("17_fkwrd")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.764807, 0.160449, 1.47778)
+
+[node name="Emmerson Hall" parent="." instance=ExtResource("18_f8xng")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.83871, 0.33626, -3.85692)
+
+[node name="Manning Memorial Chalpel" parent="." instance=ExtResource("19_f2n2t")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.59728, 0.285782, -10.9889)
+
+[node name="Rhodes Hall" parent="." instance=ExtResource("20_cl8n2")]
+transform = Transform3D(-0.4, 0, -3.49691e-08, 0, 0.4, 0, 3.49691e-08, 0, -0.4, -8.08526, -0.137001, -7.77)
+
+[node name="willet_house" parent="." instance=ExtResource("21_mtgoa")]
+transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -7.06752, 0, -1.45876)
+
+[node name="Fountain Hall 2" parent="." instance=ExtResource("22_0o3rd")]
+transform = Transform3D(-0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, -2.30497, 0, -1.17771)
+
+[node name="Cutten House" parent="." instance=ExtResource("23_cc3rf")]
+transform = Transform3D(0.489074, 0, -0.103956, 0, 0.5, 0, 0.103956, 0, 0.489074, -6.74864, -0.140452, 13.5632)
+
+[node name="Bancroft" parent="." instance=ExtResource("24_bxmes")]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 4.88153, 0.283242, -8.1005)
+
+[node name="Hayward_House" parent="." instance=ExtResource("25_4s8b4")]
+transform = Transform3D(0.0668583, 0, 0.246079, 0, 0.255, 0, -0.246079, 0, 0.0668583, 5.9828, 0.200416, -10.4242)
+
+[node name="Wong International Centre" parent="." instance=ExtResource("26_51fv0")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 7.71994, 0.464527, -9.94345)
