@@ -1,6 +1,11 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://day5axyn1f4yd"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://day5axyn1f4yd"]
 
 [ext_resource type="StyleBox" uid="uid://bc36poranoh25" path="res://src/style_box.tres" id="1_rs7h7"]
+
+[sub_resource type="FontVariation" id="FontVariation_qnjyj"]
+variation_face_index = 3
+variation_embolden = 1.08
+spacing_top = 10
 
 [resource]
 default_font_size = 16
@@ -29,6 +34,7 @@ MarginContainer/constants/margin_top = 4
 Panel/styles/panel = ExtResource("1_rs7h7")
 RichTextLabel/colors/default_color = Color(0.392157, 0.321569, 0.25098, 1)
 RichTextLabel/colors/font_outline_color = Color(0.392157, 0.321569, 0.25098, 1)
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_qnjyj")
 SplitContainer/constants/separation = 4
 TextEdit/styles/focus = ExtResource("1_rs7h7")
 TextEdit/styles/normal = ExtResource("1_rs7h7")
