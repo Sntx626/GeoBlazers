@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfiwsch5it64j"]
+[gd_scene load_steps=8 format=3 uid="uid://bfiwsch5it64j"]
 
 [ext_resource type="Texture2D" uid="uid://bja07ong1d1cx" path="res://rsc/icons/burger-menu-button/burger.png" id="1_xyv6u"]
 [ext_resource type="StyleBox" uid="uid://bypsu7fk5ni3a" path="res://src/style_box_border.tres" id="2_8kd81"]
 [ext_resource type="Texture2D" uid="uid://djadio40kkla0" path="res://rsc/icons/search-magnif/search-magnif.png" id="2_r02qv"]
 [ext_resource type="Theme" uid="uid://day5axyn1f4yd" path="res://src/main-theme.tres" id="3_xwq30"]
-[ext_resource type="StyleBox" path="res://src/listItemSelected.tres" id="5_uq37n"]
+[ext_resource type="StyleBox" uid="uid://c2bnymr34eh7c" path="res://src/listItemSelected.tres" id="5_uq37n"]
+[ext_resource type="Script" path="res://src/ImageHTTPRequest.gd" id="6_cey1j"]
 
 [sub_resource type="GDScript" id="GDScript_4shl6"]
 script/source = "extends MarginContainer
@@ -119,13 +120,13 @@ func update_building_selection(index: int):
 
 
 func label_driver(index: int):
-	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".add_text(buildings[index].name + \"\\n\\n\") 
-	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".add_text(buildings[index].address + \"\\n\\n\")
-	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".add_text(buildings[index].desc)
+	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".add_text(\"[center]\" + buildings[index].name + \"\\n\\n\" + \"[/center]\")
+	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".bbcode_text = (\"[center]\" + buildings[index].address + \"\\n\\n\"+ \"[/center]\")
+	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".bbcode_text = (\"[center][b]\" + buildings[index].name + \"\\n\\n\" + \"[/b][/center]\"+ \"[center]\" + buildings[index].address + \"\\n\\n\"+ \"[/center]\" + \"[center]\" + buildings[index].desc + \"[/center]\")
 	#$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".add_image(buildings[index].image_url)
 
 
-func find_building(name: String) -> int:
+func find_building(name: String	) -> int:
 	for i in range(len(buildings)):
 		if buildings[i].name.contains(name):
 			return i
@@ -266,7 +267,7 @@ Quisque molestie ornare est ut facilisis. Quisque convallis dictum porttitor. In
 
 Nulla blandit mi vitae fringilla accumsan. In pulvinar tincidunt tellus, non dapibus sem mattis vel. Suspendisse sed pellentesque dui. Vivamus gravida eget velit dapibus pretium. Nam eleifend nibh et euismod tincidunt. Aenean aliquam sapien id augue viverra, eu vehicula massa fringilla. Vestibulum leo ligula, imperdiet ut ipsum eu, blandit semper massa. Phasellus convallis est eget elementum vulputate. Maecenas et erat ac odio feugiat eleifend at eu lectus. Aliquam quis nibh quis arcu convallis iaculis a vel erat. Donec erat augue, ultricies fermentum est in, finibus hendrerit neque. Suspendisse laoreet dolor sed dui molestie varius. Sed ullamcorper velit vitae orci porttitor, eget ultricies enim pharetra. Donec eu fermentum velit. Aliquam accumsan nisl dignissim, lacinia tellus vitae, semper neque. Etiam ante lectus, facilisis vitae dui et, fringilla venenatis mauris.
 
-Cras sollicitudin dolor eu nibh venenatis, et placerat lacus congue. Sed nibh eros, commodo eu varius in, euismod tempor lectus. Proin vulputate eu nibh vel sollicitudin. Nam massa massa, sagittis aliquet eleifend vitae, ultricies non velit. Mauris tempus porttitor magna, et viverra purus dictum vel. Proin ornare massa cursus tellus pharetra, nec blandit risus viverra. Quisque sed lacinia leo. Vestibulum at tortor non risus egestas tincidunt. [/center]"
+Cras sollicitudin dolor eu nibh venenatis, et placerat lacus congue. Sed nibh eros, commodo eu varius in, euismod tempor lectus. Proin vulputate eu nibh vel sollicitudin. Nam massa massa, sagittis aliquet eleifend vitae, ultricies non velit. Mauris tempus porttitor magna, et viverra purus dictum vel. Proin ornare massa cursus tellus pharetra, nec blandit risus viverra. Quisque sed lacinia leo. VestibSulum at tortor non risus egestas tincidunt. [/center]"
 fit_content = true
 structured_text_bidi_override_options = [null]
 
@@ -300,13 +301,16 @@ theme = ExtResource("3_xwq30")
 [node name="RichTextLabel" type="RichTextLabel" parent="tutorial/tutorial-bg/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("3_xwq30")
-text = "This is a Tutorial
-
+bbcode_enabled = true
+text = "[center][b][i]
+This is a Tutorial
+[/i][/b][/center]
 * Use the arrow keys for navigating the character.
 * Press ESC or the button in the top left corner to open the building menu
 * You can always type the name of the building in the top bar to focus it
 
 Thank you for using our application!"
+structured_text_bidi_override = 4
 
 [node name="MarginContainer2" type="MarginContainer" parent="tutorial/tutorial-bg"]
 layout_mode = 1
@@ -327,6 +331,9 @@ theme = ExtResource("3_xwq30")
 layout_mode = 2
 theme = ExtResource("3_xwq30")
 text = "Close Info"
+
+[node name="BuildingIMG_HTTPRequest" type="HTTPRequest" parent="."]
+script = ExtResource("6_cey1j")
 
 [connection signal="pressed" from="main-ui/top-bar/menu-button" to="." method="_on_menubutton_pressed"]
 [connection signal="text_changed" from="main-ui/top-bar/search-bar" to="." method="_on_searchbar_text_changed"]
