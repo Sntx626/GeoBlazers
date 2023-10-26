@@ -44,7 +44,7 @@ func _process(delta):
 			_on_menubutton_pressed()
 			
 	var info_view = $\"main-ui/info-view\"
-	if timer.is_stopped(): #If its been atleast 0.2 seconds
+	if timer.is_stopped(): #If its been atleast 0.1 seconds
 		if info_view: #if the menu is visible
 			if Input.is_action_pressed(\"ui_up\"):
 				var selectedIndex = $\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".get_selected_items()[0]
@@ -58,10 +58,8 @@ func _process(delta):
 				if(selectedIndex < itemCount-1):
 					update_building_selection(selectedIndex+1)
 					timer.start()
-		
-		
-	#if Input.is_action_just_pressed(\"alphabet\"):
-		#_on_searchbar_text_changed(text)
+					
+			
 		
 
 var buildings = []
@@ -114,21 +112,22 @@ func _ready():
 func update_building_selection(index: int):
 	selected_building = index
 	$\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".select(index)
-	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".clear()
+	$\"main-ui/info-view/poi-info-panel/MarginContainer/MarginContainer/ScrollContainer/poi-label\".clear()
 	label_driver(index)
 	$\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".ensure_current_is_visible()
 
 
 func label_driver(index: int):
-	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".add_text(\"[center]\" + buildings[index].name + \"\\n\\n\" + \"[/center]\")
-	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".bbcode_text = (\"[center]\" + buildings[index].address + \"\\n\\n\"+ \"[/center]\")
-	$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".bbcode_text = (\"[center][b]\" + buildings[index].name + \"\\n\\n\" + \"[/b][/center]\"+ \"[center]\" + buildings[index].address + \"\\n\\n\"+ \"[/center]\" + \"[center]\" + buildings[index].desc + \"[/center]\")
-	#$\"main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/poi-label\".add_image(buildings[index].image_url)
+	$\"main-ui/info-view/poi-info-panel/MarginContainer/MarginContainer/ScrollContainer/poi-label\".add_text(\"[center]\" + buildings[index].name + \"\\n\\n\" + \"[/center]\")
+	$\"main-ui/info-view/poi-info-panel/MarginContainer/MarginContainer/ScrollContainer/poi-label\".bbcode_text = (\"[center]\" + buildings[index].address + \"\\n\\n\"+ \"[/center]\")
+	$\"main-ui/info-view/poi-info-panel/MarginContainer/MarginContainer/ScrollContainer/poi-label\".bbcode_text = (\"[center][b]\" + buildings[index].name + \"\\n\\n\" + \"[/b][/center]\"+ \"[center]\" + buildings[index].address + \"\\n\\n\"+ \"[/center]\" + \"[center]\" + buildings[index].desc + \"[/center]\")
+	#$\"main-ui/info-view/poi-info-panel/MarginContainer/MarginContainer/ScrollContainer/poi-label\".add_image(buildings[index].image_url)
 
 
 func find_building(name: String	) -> int:
 	for i in range(len(buildings)):
-		if buildings[i].name.contains(name):
+		var building_name_to_lower = buildings[i].name.to_lower()
+		if building_name_to_lower.contains(name.to_lower()):
 			return i
 	return -1
 
@@ -238,19 +237,22 @@ theme = ExtResource("3_xwq30")
 
 [node name="MarginContainer" type="MarginContainer" parent="main-ui/info-view/poi-info-panel"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_xwq30")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="main-ui/info-view/poi-info-panel/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="main-ui/info-view/poi-info-panel/MarginContainer"]
 layout_mode = 2
-theme = ExtResource("3_xwq30")
 
-[node name="poi-label" type="RichTextLabel" parent="main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="main-ui/info-view/poi-info-panel/MarginContainer/MarginContainer"]
 layout_mode = 2
+
+[node name="poi-label" type="RichTextLabel" parent="main-ui/info-view/poi-info-panel/MarginContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("3_xwq30")
 theme_override_font_sizes/bold_font_size = 0
@@ -271,9 +273,10 @@ Cras sollicitudin dolor eu nibh venenatis, et placerat lacus congue. Sed nibh er
 fit_content = true
 structured_text_bidi_override_options = [null]
 
-[node name="goto-poi-button" type="Button" parent="main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer"]
+[node name="goto-poi-button" type="Button" parent="main-ui/info-view/poi-info-panel/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 8
 theme = ExtResource("3_xwq30")
 text = "Go To Building"
 
@@ -339,5 +342,5 @@ script = ExtResource("6_cey1j")
 [connection signal="text_changed" from="main-ui/top-bar/search-bar" to="." method="_on_searchbar_text_changed"]
 [connection signal="text_submitted" from="main-ui/top-bar/search-bar" to="." method="_on_searchbar_text_submitted"]
 [connection signal="item_selected" from="main-ui/info-view/poi-list-panel/MarginContainer/poi-list" to="." method="_on_poilist_item_selected"]
-[connection signal="pressed" from="main-ui/info-view/poi-info-panel/MarginContainer/VBoxContainer/goto-poi-button" to="." method="_on_gotopoibutton_pressed"]
+[connection signal="pressed" from="main-ui/info-view/poi-info-panel/MarginContainer/goto-poi-button" to="." method="_on_gotopoibutton_pressed"]
 [connection signal="pressed" from="tutorial/tutorial-bg/MarginContainer2/CenterContainer/CloseTutorialButton" to="." method="_on_close_tutorial_button_pressed"]

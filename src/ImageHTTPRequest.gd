@@ -7,7 +7,7 @@ func _ready():
 	http_request.request_completed.connect(self._http_request_completed)
 
 	# Perform the HTTP request. The URL below returns a PNG image as of writing.
-	var error = http_request.request("PNGURL") #PNG Only | https://www.reddit.com/r/godot/comments/fdk46e/how_can_i_load_an_image_from_the_internet/
+	var error = http_request.request("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTORLgZU5IchV83fXrUe9bENq4tPnRIjyKJ9RWZ-2JEHg&s") #PNG Only | https://www.reddit.com/r/godot/comments/fdk46e/how_can_i_load_an_image_from_the_internet/
 	if error != OK:
 		push_error("An error occurred in the HTTP request.")
 
