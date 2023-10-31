@@ -23,9 +23,14 @@ func _http_request_completed(result, response_code, headers, body):
 
 	#Sizing
 	var viewport_size = get_viewport().size
-	var new_width = 500 * viewport_size.x * 0.00099  #For responsiveness
-	var new_height = 300 * viewport_size.y * 0.00099  
-	image.resize(new_width, new_height)
+	var aspectRatio = float((image.get_width()+1))/(float(image.get_height()+1))
+	print(image.get_width())
+	print(image.get_height())
+	print(aspectRatio)
+	if (aspectRatio > 0.01):
+		var new_width = 400 * viewport_size.x * 0.00099  #For responsiveness
+		var new_height = new_width / aspectRatio 
+		image.resize(new_width, new_height)
 	var texture = ImageTexture.create_from_image(image)
 	
 	var script1 = load("res://src/ui.tscn").instantiate()
@@ -40,5 +45,6 @@ func _http_request_completed(result, response_code, headers, body):
 	script2.append_text(first_part)
 	script2.append_text('[center]')
 	script2.add_image(texture)
+	script2.add_text("\n\n")
 	script2.append_text(second_part)
 	script2.add_text("\n\n\n")
