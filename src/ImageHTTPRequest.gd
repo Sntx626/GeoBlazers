@@ -1,29 +1,43 @@
 extends Node
 
-func _ready():
+func requestHTTP(URL):
 	# Create an HTTP request node and connect its completion signal.
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)
+	var response = http_request.request(URL)
+	
+	return response
 
-	# Perform the HTTP request. The URL below returns a PNG image as of writing.
-	var error = http_request.request("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTORLgZU5IchV83fXrUe9bENq4tPnRIjyKJ9RWZ-2JEHg&s") #PNG Only | https://www.reddit.com/r/godot/comments/fdk46e/how_can_i_load_an_image_from_the_internet/
-	if error != OK:
-		push_error("An error occurred in the HTTP request.")
-
-# Called when the HTTP request is completed.
 func _http_request_completed(result, response_code, headers, body):
+	#On completion, make image into label compatible format
 	if result != HTTPRequest.RESULT_SUCCESS:
+		print('g')
 		push_error("Image couldn't be downloaded. Try a different image.")
 
 	var image = Image.new()
-	var error = image.load_png_from_buffer(body)
+	#Only jpg or png
+	var error = image.load_jpg_from_buffer(body)
 	if error != OK:
-		push_error("Couldn't load the image.")
+		error = image.load_png_from_buffer(body)
 
+	#Sizing
+	var viewport_size = get_viewport().size
+	var new_width = 500 * viewport_size.x * 0.00099  #For responsiveness
+	var new_height = 300 * viewport_size.y * 0.00099  
+	image.resize(new_width, new_height)
 	var texture = ImageTexture.create_from_image(image)
-
-	# Display the image in a TextureRect node.
-	var texture_rect = TextureRect.new()
-	add_child(texture_rect)
-	texture_rect.texture = texture
+	
+	var script1 = load("res://src/ui.tscn").instantiate()
+	var script2 = get_node("../main-ui/info-view/poi-info-panel/MarginContainer/MarginContainer/ScrollContainer/poi-label")
+	
+	#Reset image without deleting text
+	var text = script2.text
+	script2.clear()
+	script2.append_text(text)
+	
+	script2.append_text('[center]')
+	script2.add_image(texture)
+	
+	
+	script2.add_text("\n\n\n")

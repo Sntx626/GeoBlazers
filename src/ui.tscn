@@ -44,7 +44,7 @@ func _process(delta):
 			_on_menubutton_pressed()
 			
 	var info_view = $\"main-ui/info-view\"
-	if timer.is_stopped(): #If its been atleast 0.1 seconds
+	if timer.is_stopped(): #If its been atleast 0.09 seconds
 		if info_view: #if the menu is visible
 			if Input.is_action_pressed(\"ui_up\"):
 				var selectedIndex = $\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".get_selected_items()[0]
@@ -118,12 +118,17 @@ func update_building_selection(index: int):
 
 
 func label_driver(index: int):
-	$\"main-ui/info-view/poi-info-panel/MarginContainer/MarginContainer/ScrollContainer/poi-label\".add_text(\"[center]\" + buildings[index].name + \"\\n\\n\" + \"[/center]\")
-	$\"main-ui/info-view/poi-info-panel/MarginContainer/MarginContainer/ScrollContainer/poi-label\".bbcode_text = (\"[center]\" + buildings[index].address + \"\\n\\n\"+ \"[/center]\")
-	$\"main-ui/info-view/poi-info-panel/MarginContainer/MarginContainer/ScrollContainer/poi-label\".bbcode_text = (\"[center][b]\" + buildings[index].name + \"\\n\\n\" + \"[/b][/center]\"+ \"[center]\" + buildings[index].address + \"\\n\\n\"+ \"[/center]\" + \"[center]\" + buildings[index].desc + \"[/center]\")
-	#$\"main-ui/info-view/poi-info-panel/MarginContainer/MarginContainer/ScrollContainer/poi-label\".add_image(buildings[index].image_url)
 
-
+	var script = load(\"res://src/ImageHTTPRequest.gd\")
+	# Creating an instance to call a non-static method
+	var instance = script.new()
+	self.add_child(instance)
+	
+	var picture = instance.requestHTTP(buildings[index].image_url)#\"https://via.placeholder.com/512\"
+	$\"main-ui/info-view/poi-info-panel/MarginContainer/MarginContainer/ScrollContainer/poi-label\".clear()
+	$\"main-ui/info-view/poi-info-panel/MarginContainer/MarginContainer/ScrollContainer/poi-label\".bbcode_text = (\"[center][b]\" + buildings[index].name + \"\\n\" + \"[/b][/center]\" +
+	\"[center]\" + buildings[index].address + \"[/center]\" + \"\\n\" + \"[center] Usual hours of opperation: \" + buildings[index].hours_of_operation +\"\\n\\n\\n\"+ \"[center]\" + buildings[index].desc + \"[/center]\")
+	
 func find_building(name: String	) -> int:
 	for i in range(len(buildings)):
 		var building_name_to_lower = buildings[i].name.to_lower()
@@ -132,7 +137,7 @@ func find_building(name: String	) -> int:
 	return -1
 
 func goto_building():
-	print(selected_building)
+	#print(selected_building)
 	
 	# reset ui state
 	$\"main-ui/top-bar/search-bar\".clear()
