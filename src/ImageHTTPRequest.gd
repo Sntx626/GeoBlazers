@@ -34,10 +34,11 @@ func _http_request_completed(result, response_code, headers, body):
 	#Reset image without deleting text
 	var text = script2.text
 	script2.clear()
-	script2.append_text(text)
-	
+	var split_index = text.find("[left][b]")
+	var first_part = text.substr(0, split_index)
+	var second_part = text.substr(split_index + 0, text.length() - split_index - 14)
+	script2.append_text(first_part)
 	script2.append_text('[center]')
 	script2.add_image(texture)
-	
-	
+	script2.append_text(second_part)
 	script2.add_text("\n\n\n")

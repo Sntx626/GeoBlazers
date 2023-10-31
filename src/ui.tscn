@@ -127,7 +127,7 @@ func label_driver(index: int):
 	var picture = instance.requestHTTP(buildings[index].image_url)#\"https://via.placeholder.com/512\"
 	$\"main-ui/info-view/poi-info-panel/MarginContainer/MarginContainer/ScrollContainer/poi-label\".clear()
 	$\"main-ui/info-view/poi-info-panel/MarginContainer/MarginContainer/ScrollContainer/poi-label\".bbcode_text = (\"[center][b]\" + buildings[index].name + \"\\n\" + \"[/b][/center]\" +
-	\"[center]\" + buildings[index].address + \"[/center]\" + \"\\n\" + \"[center] Usual hours of opperation: \" + buildings[index].hours_of_operation +\"\\n\\n\\n\"+ \"[center]\" + buildings[index].desc + \"[/center]\")
+	\"[center]\" + buildings[index].address + \"[/center]\" + \"\\n\" + \"[center] Usual hours of opperation: \" + buildings[index].hours_of_operation + \"[/center]\" +\"\\n\\n\\n\"+ \"[left][b]\" + \"Fun facts about \"+ buildings[index].name + \":\" + \"[/b]\" + \"\\n\" + buildings[index].desc + \"[/left]\")
 	
 func find_building(name: String	) -> int:
 	for i in range(len(buildings)):
