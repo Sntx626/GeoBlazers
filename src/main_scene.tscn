@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dionaam27v0vs"]
+[gd_scene load_steps=10 format=3 uid="uid://dionaam27v0vs"]
 
 [ext_resource type="PackedScene" uid="uid://jq8ltljr8q36" path="res://src/floor.tscn" id="1_ap5x5"]
 [ext_resource type="PackedScene" uid="uid://bfiwsch5it64j" path="res://src/ui.tscn" id="1_wbppl"]
 [ext_resource type="PackedScene" uid="uid://dgdrfnfjognx2" path="res://src/character.tscn" id="2_ed0ef"]
+[ext_resource type="PackedScene" uid="uid://dvsrityae3tru" path="res://rsc/buildings/Godfrey House/Godfrey.dae" id="4_8gxm2"]
+[ext_resource type="PackedScene" uid="uid://bper6mtea3w5s" path="res://rsc/buildings/ROJO House/Rojo.dae" id="5_170t5"]
+[ext_resource type="PackedScene" uid="uid://c5t17qds53ufa" path="res://rsc/buildings/Clark Commons/Clark_commons.dae" id="6_nl6lk"]
+[ext_resource type="PackedScene" uid="uid://cnn4j3qijtbqt" path="res://rsc/buildings/Physical Plant/Physical Plant.dae" id="7_xfhvf"]
+[ext_resource type="PackedScene" uid="uid://cnagivbhu6xus" path="res://rsc/buildings/Service Building Garage/Service Building Garage.dae" id="8_gelyl"]
+[ext_resource type="PackedScene" uid="uid://dc6wfqgm7puhl" path="res://rsc/buildings/Centre for Organizational Research & Development/Centre for Organizational Research & Development.dae" id="9_jcv18"]
 
 [node name="main" type="Node3D"]
 
@@ -15,3 +21,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4388, 0, -3.19637)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.652165, 0.536042, -0.536042, 1.77636e-15, 0.707107, 0.707107, 0.758078, -0.46115, 0.46115, 2.97119, 7.1041, 5.54489)
+
+[node name="Godfrey" parent="." instance=ExtResource("4_8gxm2")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 4.70347, 0.172567, -10.7783)
+
+[node name="Rojo" parent="." instance=ExtResource("5_170t5")]
+transform = Transform3D(-3.0598e-09, 0, 0.07, 0, 0.07, 0, -0.07, 0, -3.0598e-09, -4.44241, 0, 5.62383)
+
+[node name="Clark_commons" parent="." instance=ExtResource("6_nl6lk")]
+transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -6.75138, 0.360122, 4.36322)
+
+[node name="Physical Plant" parent="." instance=ExtResource("7_xfhvf")]
+transform = Transform3D(0.38637, 0, -0.103528, 0, 0.4, 0, 0.103528, 0, 0.38637, -5.66339, 0, 19.0324)
+
+[node name="Service Building Garage" parent="." instance=ExtResource("8_gelyl")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -6.644, 0.387885, 23.3826)
+
+[node name="Centre for Organizational Research & Development" parent="." instance=ExtResource("9_jcv18")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 7.74739, 0.16816, -8.30338)
