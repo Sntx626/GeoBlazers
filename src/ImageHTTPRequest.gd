@@ -38,7 +38,7 @@ func _http_request_completed(result, response_code, headers, body):
 	script2.clear()
 	var split_index = text.find("[left][b]")
 	var first_part = text.substr(0, split_index)
-	var second_part = text.substr(split_index + 0, text.length() - split_index - 14)
+	var second_part = text.substr(split_index + 0, text.length() - split_index)
 	script2.append_text(first_part)
 	script2.append_text('[center]')
 	script2.add_image(texture)

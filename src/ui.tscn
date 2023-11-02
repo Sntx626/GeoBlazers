@@ -100,8 +100,6 @@ func _ready():
 	timer.wait_time = delay
 	timer.one_shot = true
 	
-	#buildings.sort_custom(func(x, y): x.name < y.name)
-	
 	# add buildings to poi-list in the menu
 	for building in buildings:
 		$\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".add_item(building.name)
