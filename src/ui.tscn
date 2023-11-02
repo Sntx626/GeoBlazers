@@ -45,7 +45,7 @@ func _process(delta):
 			
 	var info_view = $\"main-ui/info-view\"
 	if timer.is_stopped(): #If its been atleast 0.09 seconds
-		if info_view: #if the menu is visible
+		if info_view.is_visible(): #if the menu is visible
 			if Input.is_action_pressed(\"ui_up\"):
 				var selectedIndex = $\"main-ui/info-view/poi-list-panel/MarginContainer/poi-list\".get_selected_items()[0]
 				if(selectedIndex > 0):

@@ -12,7 +12,6 @@ func requestHTTP(URL):
 func _http_request_completed(result, response_code, headers, body):
 	#On completion, make image into label compatible format
 	if result != HTTPRequest.RESULT_SUCCESS:
-		print('g')
 		push_error("Image couldn't be downloaded. Try a different image.")
 
 	var image = Image.new()
@@ -24,9 +23,7 @@ func _http_request_completed(result, response_code, headers, body):
 	#Sizing
 	var viewport_size = get_viewport().size
 	var aspectRatio = float((image.get_width()+1))/(float(image.get_height()+1))
-	print(image.get_width())
-	print(image.get_height())
-	print(aspectRatio)
+	#print(aspectRatio)
 	if (aspectRatio > 0.01):
 		var new_width = 400 * viewport_size.x * 0.00099  #For responsiveness
 		var new_height = new_width / aspectRatio 
