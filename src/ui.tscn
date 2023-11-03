@@ -4,7 +4,7 @@
 [ext_resource type="StyleBox" uid="uid://bypsu7fk5ni3a" path="res://src/style_box_border.tres" id="2_8kd81"]
 [ext_resource type="Texture2D" uid="uid://djadio40kkla0" path="res://rsc/icons/search-magnif/search-magnif.png" id="2_r02qv"]
 [ext_resource type="Theme" uid="uid://day5axyn1f4yd" path="res://src/main-theme.tres" id="3_xwq30"]
-[ext_resource type="StyleBox" uid="uid://c2bnymr34eh7c" path="res://src/listItemSelected.tres" id="5_uq37n"]
+[ext_resource type="StyleBox" path="res://src/listItemSelected.tres" id="5_uq37n"]
 [ext_resource type="Script" path="res://src/ImageHTTPRequest.gd" id="6_cey1j"]
 
 [sub_resource type="GDScript" id="GDScript_4shl6"]
@@ -135,7 +135,7 @@ func find_building(name: String	) -> int:
 	return -1
 
 func goto_building():
-	#print(selected_building)
+	$\"../character\".goto_building(buildings[selected_building].name)
 	
 	# reset ui state
 	$\"main-ui/top-bar/search-bar\".clear()
@@ -206,6 +206,7 @@ theme_override_styles/normal = ExtResource("2_8kd81")
 theme_override_styles/focus = ExtResource("2_8kd81")
 theme_override_styles/read_only = ExtResource("2_8kd81")
 placeholder_text = " Search"
+deselect_on_focus_loss_enabled = false
 right_icon = ExtResource("2_r02qv")
 
 [node name="info-view" type="HSplitContainer" parent="main-ui"]

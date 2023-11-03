@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dionaam27v0vs"]
+[gd_scene load_steps=11 format=3 uid="uid://dionaam27v0vs"]
 
 [ext_resource type="PackedScene" uid="uid://jq8ltljr8q36" path="res://src/floor.tscn" id="1_ap5x5"]
 [ext_resource type="PackedScene" uid="uid://bfiwsch5it64j" path="res://src/ui.tscn" id="1_wbppl"]
 [ext_resource type="PackedScene" uid="uid://dgdrfnfjognx2" path="res://src/character.tscn" id="2_ed0ef"]
+[ext_resource type="Script" path="res://src/character.gd" id="3_rwo87"]
 [ext_resource type="PackedScene" uid="uid://dvsrityae3tru" path="res://rsc/buildings/Godfrey House/Godfrey.dae" id="4_8gxm2"]
 [ext_resource type="PackedScene" uid="uid://bper6mtea3w5s" path="res://rsc/buildings/ROJO House/Rojo.dae" id="5_170t5"]
 [ext_resource type="PackedScene" uid="uid://c5t17qds53ufa" path="res://rsc/buildings/Clark Commons/Clark_commons.dae" id="6_nl6lk"]
@@ -16,6 +17,7 @@
 
 [node name="character" parent="." instance=ExtResource("2_ed0ef")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4388, 0, -3.19637)
+script = ExtResource("3_rwo87")
 
 [node name="floor" parent="." instance=ExtResource("1_ap5x5")]
 
