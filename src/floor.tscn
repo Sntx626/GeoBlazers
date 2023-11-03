@@ -1,14 +1,12 @@
-[gd_scene load_steps=32 format=3 uid="uid://jq8ltljr8q36"]
+[gd_scene load_steps=33 format=3 uid="uid://jq8ltljr8q36"]
 
 [ext_resource type="Texture2D" uid="uid://dqbqb304ltsth" path="res://rsc/acadia-map/acadia-map.png" id="1_jid5x"]
 [ext_resource type="PackedScene" uid="uid://woiy7xcx5f72" path="res://rsc/buildings/Crowell Tower/Tower.dae" id="2_wtl07"]
-[ext_resource type="PackedScene" uid="uid://bw8fuipailpql" path="res://rsc/buildings/Acadia Students Union/ASU.dae" id="3_ek0ir"]
 [ext_resource type="PackedScene" uid="uid://bjnft1ixruas3" path="res://rsc/buildings/Chase Court/Chase Court.dae" id="4_2pa6q"]
 [ext_resource type="PackedScene" uid="uid://dpebgiccw41et" path="res://rsc/buildings/Chipman House/Chipman.dae" id="5_50066"]
 [ext_resource type="PackedScene" uid="uid://cgmi44egfxijg" path="res://rsc/buildings/carnegie-hall/Carnegie_Hall_WIP.dae" id="6_cu4is"]
 [ext_resource type="PackedScene" uid="uid://cefwxh757nfag" path="res://rsc/buildings/Beverage Arts Hall/BAC.dae" id="7_h6rig"]
 [ext_resource type="PackedScene" uid="uid://dr3dl0dq7m76a" path="res://rsc/buildings/Acadia Divinity College/Acadia Divinity College.dae" id="8_r4cac"]
-[ext_resource type="PackedScene" uid="uid://d2lihoiw1ifag" path="res://rsc/buildings/Denton Hall/Denton3.dae" id="9_hjiid"]
 [ext_resource type="PackedScene" uid="uid://mbdqqmptxare" path="res://rsc/buildings/DeWolf (Farmers Market)/Dewolf.dae" id="10_v4pif"]
 [ext_resource type="PackedScene" uid="uid://botxg3piwtgna" path="res://rsc/buildings/Dennis House/Dennis.dae" id="11_bra7q"]
 [ext_resource type="PackedScene" uid="uid://casr1rqk1i4rb" path="res://rsc/buildings/University Hall/University Hall.dae" id="12_pw02k"]
@@ -25,7 +23,10 @@
 [ext_resource type="PackedScene" uid="uid://qv0sd6esllix" path="res://rsc/buildings/Cutten House/Cutten House.dae" id="23_cc3rf"]
 [ext_resource type="PackedScene" uid="uid://2auox4e2h4pp" path="res://rsc/buildings/Bancroft House/Bancroft.dae" id="24_bxmes"]
 [ext_resource type="PackedScene" uid="uid://c4ympm6f6h8yu" path="res://rsc/buildings/Hayward House/Hayward_House.dae" id="25_4s8b4"]
+[ext_resource type="PackedScene" uid="uid://du3djx2te32ab" path="res://rsc/buildings/Acadia Students Union/ASU11.dae" id="26_0mgrq"]
 [ext_resource type="PackedScene" uid="uid://5oy6o1x0d8h3" path="res://rsc/buildings/Wong International Centre/Wong International Centre.dae" id="26_51fv0"]
+[ext_resource type="PackedScene" uid="uid://ddyhvelngmf1y" path="res://rsc/buildings/Denton Hall/Denton4.dae" id="26_t22ga"]
+[ext_resource type="PackedScene" uid="uid://bi5aictnbbr4y" path="res://rsc/buildings/Beverage Arts Hall/BAC10.dae" id="27_lim3o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_21n1v"]
 size = Vector3(23, 10, 1)
@@ -71,9 +72,6 @@ mesh = SubResource("PlaneMesh_mocbc")
 [node name="Tower" parent="." instance=ExtResource("2_wtl07")]
 transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, 1.38913, 1.29244, 17.3186)
 
-[node name="ASU" parent="." instance=ExtResource("3_ek0ir")]
-transform = Transform3D(0.57901, 0, -0.157313, 0, 0.6, 0, 0.157313, 0, 0.57901, 3.33037, 0.0096705, -1.82133)
-
 [node name="Chase Court" parent="." instance=ExtResource("4_2pa6q")]
 transform = Transform3D(0.388118, 0, -0.0967688, 0, 0.4, 0, 0.0967688, 0, 0.388118, -1.84783, -0.0100549, 8.28343)
 
@@ -85,12 +83,10 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -6.92128, 0.371334, -5.
 
 [node name="BAC" parent="." instance=ExtResource("7_h6rig")]
 transform = Transform3D(0.785302, 0, -0.152647, 0, 0.8, 0, 0.152647, 0, 0.785302, 4.79206, 0.0104332, -14.432)
+visible = false
 
 [node name="Acadia Divinity College" parent="." instance=ExtResource("8_r4cac")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.66268, 0.316651, 3.53937)
-
-[node name="Denton3" parent="." instance=ExtResource("9_hjiid")]
-transform = Transform3D(0.590885, 0, -0.104189, 0, 0.6, 0, 0.104189, 0, 0.590885, 0.723177, -0.0146239, -5.68086)
 
 [node name="Dewolf" parent="." instance=ExtResource("10_v4pif")]
 transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, -5.76698, 0.0265244, 1.01383)
@@ -142,3 +138,12 @@ transform = Transform3D(0.0668583, 0, 0.246079, 0, 0.255, 0, -0.246079, 0, 0.066
 
 [node name="Wong International Centre" parent="." instance=ExtResource("26_51fv0")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 7.71994, 0.464527, -9.94345)
+
+[node name="ASU11" parent="." instance=ExtResource("26_0mgrq")]
+transform = Transform3D(0.57901, 0, -0.157314, 0, 0.6, 0, 0.157314, 0, 0.57901, 5.00836, -4.76837e-07, -3.33526)
+
+[node name="Denton4" parent="." instance=ExtResource("26_t22ga")]
+transform = Transform3D(0.590885, 0, -0.104189, 0, 0.6, 0, 0.104189, 0, 0.590885, 0.720459, 0, -5.73804)
+
+[node name="BAC10" parent="." instance=ExtResource("27_lim3o")]
+transform = Transform3D(0.782518, 0, -0.166329, 0, 0.8, 0, 0.166329, 0, 0.782518, 4.79203, 0, -14.436)
