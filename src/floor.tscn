@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://jq8ltljr8q36"]
+[gd_scene load_steps=32 format=3 uid="uid://jq8ltljr8q36"]
 
 [ext_resource type="Texture2D" uid="uid://dqbqb304ltsth" path="res://rsc/acadia-map/acadia-map.png" id="1_jid5x"]
 [ext_resource type="PackedScene" uid="uid://woiy7xcx5f72" path="res://rsc/buildings/Crowell Tower/Tower.dae" id="2_wtl07"]
@@ -27,6 +27,12 @@
 [ext_resource type="PackedScene" uid="uid://c4ympm6f6h8yu" path="res://rsc/buildings/Hayward House/Hayward_House.dae" id="25_4s8b4"]
 [ext_resource type="PackedScene" uid="uid://5oy6o1x0d8h3" path="res://rsc/buildings/Wong International Centre/Wong International Centre.dae" id="26_51fv0"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_21n1v"]
+size = Vector3(23, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7l6t7"]
+size = Vector3(1, 10, 50)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_j6tu2"]
 size = Vector3(22, 1, 50.5)
 
@@ -37,6 +43,22 @@ albedo_texture = ExtResource("1_jid5x")
 size = Vector2(22, 50.5)
 
 [node name="floor" type="StaticBody3D"]
+
+[node name="north_boundary" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.1482)
+shape = SubResource("BoxShape3D_21n1v")
+
+[node name="south_boundary" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25.0347)
+shape = SubResource("BoxShape3D_21n1v")
+
+[node name="west_boundary" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0242, 0, 0)
+shape = SubResource("BoxShape3D_7l6t7")
+
+[node name="east_boundary" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.024, 0, 0)
+shape = SubResource("BoxShape3D_7l6t7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
