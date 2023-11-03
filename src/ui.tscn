@@ -206,6 +206,7 @@ theme_override_styles/normal = ExtResource("2_8kd81")
 theme_override_styles/focus = ExtResource("2_8kd81")
 theme_override_styles/read_only = ExtResource("2_8kd81")
 placeholder_text = " Search"
+editable = false
 deselect_on_focus_loss_enabled = false
 right_icon = ExtResource("2_r02qv")
 
