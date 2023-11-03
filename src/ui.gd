@@ -36,56 +36,82 @@ func update_search_bar():
 
 	if Input.is_action_just_pressed("a"):
 		$"main-ui/top-bar/search-bar".text += "a"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("b"):
 		$"main-ui/top-bar/search-bar".text += "b"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("c"):
 		$"main-ui/top-bar/search-bar".text += "c"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("d"):
 		$"main-ui/top-bar/search-bar".text += "d"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("e"):
 		$"main-ui/top-bar/search-bar".text += "e"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("f"):
 		$"main-ui/top-bar/search-bar".text += "f"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("g"):
 		$"main-ui/top-bar/search-bar".text += "g"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("h"):
 		$"main-ui/top-bar/search-bar".text += "h"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("i"):
 		$"main-ui/top-bar/search-bar".text += "i"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("j"):
 		$"main-ui/top-bar/search-bar".text += "j"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("k"):
 		$"main-ui/top-bar/search-bar".text += "k"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("l"):
 		$"main-ui/top-bar/search-bar".text += "l"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("m"):
 		$"main-ui/top-bar/search-bar".text += "m"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("n"):
 		$"main-ui/top-bar/search-bar".text += "n"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("o"):
 		$"main-ui/top-bar/search-bar".text += "o"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("p"):
 		$"main-ui/top-bar/search-bar".text += "p"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("q"):
 		$"main-ui/top-bar/search-bar".text += "q"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("r"):
 		$"main-ui/top-bar/search-bar".text += "r"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("s"):
 		$"main-ui/top-bar/search-bar".text += "s"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("t"):
 		$"main-ui/top-bar/search-bar".text += "t"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("u"):
 		$"main-ui/top-bar/search-bar".text += "u"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("v"):
 		$"main-ui/top-bar/search-bar".text += "v"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("w"):
 		$"main-ui/top-bar/search-bar".text += "w"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("x"):
 		$"main-ui/top-bar/search-bar".text += "x"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("y"):
 		$"main-ui/top-bar/search-bar".text += "y"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 	if Input.is_action_just_pressed("z"):
 		$"main-ui/top-bar/search-bar".text += "z"
+		_on_searchbar_text_changed($"main-ui/top-bar/search-bar".text)
 
 func _process(delta):
 	var isMenuVisible = false
